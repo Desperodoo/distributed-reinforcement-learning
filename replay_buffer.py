@@ -24,13 +24,14 @@ class MiniBuffer:
 
         self.max_episode_len = 0
 
-    def store_transition(self, num_episode, episode_step, state, v, a, a_logprob, r, done):
+    def store_transition(self, num_episode, episode_step, state, v, a, a_logprob, r, done,map):
         self.buffer['state'][num_episode][episode_step] = state
         self.buffer['v'][num_episode][episode_step] = v
         self.buffer['a'][num_episode][episode_step] = a
         self.buffer['a_logprob'][num_episode][episode_step] = a_logprob
         self.buffer['r'][num_episode][episode_step] = r
         self.buffer['active'][num_episode][episode_step] = done
+        self.buffer['map'][num_episode][episode_step] = map
 
     def store_last_value(self, num_episode, episode_step, v):
         self.buffer['v'][num_episode][episode_step] = v
