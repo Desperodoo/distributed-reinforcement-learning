@@ -8,4 +8,4 @@ A distributed framework for single-agent/multi-agent reinforcement learning algo
 3. Launch ray cluster in the other servers:
    ray start --address='xxx.xx.xxx.xxx:6388' --resources='{"node_1": 1}'
 4. Summit jobs
-   ray job submit --working-dir ./ -- python MAPPO_parallel_main.py
+   ray job submit --working-dir ./ -- python main.py
